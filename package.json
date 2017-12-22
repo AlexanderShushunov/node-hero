@@ -1,0 +1,23 @@
+{
+  "name": "node-hero-exercises",
+  "version": "1.0.0",
+  "description": "Exercises from the book 'Node Hero' by RisingStack.",
+  "main": "index.js",
+  "scripts": {
+    "start": "PGUSER=postgres PGHOST=localhost PGPASSWORD=12345 PGDATABASE=node_hero PGPORT=5432 node ./app/index"
+  },
+  "keywords": [
+    "nodejs",
+    "nodehero"
+  ],
+  "author": "Alexander Shushunov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "pg": "^7.4.0"
+  }
+}
