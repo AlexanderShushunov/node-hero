@@ -4,7 +4,7 @@
   "description": "Exercises from the book 'Node Hero' by RisingStack.",
   "main": "index.js",
   "scripts": {
-    "start": "PGUSER=postgres PGHOST=localhost PGPASSWORD=12345 PGDATABASE=node_hero PGPORT=5432 node ./app/index"
+    "start": "PGUSER=postgres PGHOST=localhost PGPASSWORD=12345 PGDATABASE=node_hero PGPORT=5432 node --inspect ./app/index"
   },
   "keywords": [
     "nodejs",
@@ -14,7 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",

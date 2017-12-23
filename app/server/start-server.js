@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {resource} = require('./resource');
 const dataProviders = require('../data-providers');
+const {getCurrentTemperatureInMoscow} = require('../servises/temerature');
 
 const port = 8000;
 
@@ -16,6 +17,15 @@ module.exports.startServer = function () {
     });
 
     resource(app, dataProviders.users, 'users');
+
+    app.get('/current-temperature-in-moscow', async (request, response, next) => {
+        try {
+            const temp = await getCurrentTemperatureInMoscow();
+            response.send(String(temp));
+        } catch (err) {
+            next(err);
+        }
+    });
 
     app.use((err, request, response, next) => {
         console.log(err);
